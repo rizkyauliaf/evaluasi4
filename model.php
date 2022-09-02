@@ -38,5 +38,16 @@ if ($fechResult['role'] == 'admin') {
     // echo 'alert("Username atau Password Anda Salah")';  
     // echo '</script>'; 
 }
+//ambil tabel produk
+function getTableProduk(){
+    $link = mysqli_connect('localhost', 'root', '', 'dts_tsa');
+    $query = "SELECT * FROM produk";
+    $result = mysqli_query($link, $query);
+
+//ambil semua isi tabel ke dalam bentuk array 2 Dimensi
+$hasil = mysqli_fetch_all($result, MYSQLI_ASSOC);
+return $hasil;
+}
 
 mysqli_close($connect);
+?>

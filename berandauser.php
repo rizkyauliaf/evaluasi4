@@ -74,67 +74,27 @@
   </div>
 
   <?php
-
-  function buatKoneksi()
-  {
-    $dbhost = "localhost";
-    $dbuser = "root";
-    $dbpass = "";
-    $dbname = "dts_tsa";
-    return mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
-  }
-
-  //ambil tabel mahasiswa
-  function getTableMahasiswa()
-  {
-    $link = buatKoneksi();
-    $query = "SELECT * FROM produk";
-    $result = mysqli_query($link, $query);
-
-    //ambil semua isi tabel kedalam betuk array 2 dimensi
-    $hasil = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    return $hasil;
-  }
   ?>
-  //
-  <!-- sixth Container (Grid) -->
-  //
-  <!-- <div class="container-fluid bg-2 text-center">
-  //   <h2 class="margin">KONTRIBUSI</h2>
-  //   <br>
-  //   <div class="row">
-  //     <div class="col-sm-4">
-  //       <img src="img/kelud.jpg" class="img-responsive margin" style="width:100%" alt="Image" />
-  //       <div class="sub-judul">
-  //         <h4><b>Teknologi canggih di setiap lini</b></h4>
-  //       </div>
-  //       <p>
-  //         Menerapkan inovasi yang berpusat pada pelanggan untuk mengembangkan ekosistem digital yang berkelanjutan dan inklusif.<a href="">Selengkapnya</a>
-  //       </p>
+  <div class="container">
+    <h1>Data Produk</h1>
+    <table border="1">
+        <tr>
 
-  //     </div>
-  //     <div class="col-sm-4">
-  //       <img src="img/korea.jpg" class="img-responsive margin" style="width:100%" alt="Image" />
-  //       <div class="sub-judul">
-  //         <h4><b>Kampung Korea</b></h4>
-  //       </div>
-  //       <p>
-  //         Area bertema dengan model rumah Korea, pohon berbunga & rental pakaian tradisional "hanbok"...<a href="">Selengkapnya</a>
-  //       </p>
-  //     </div>
-  //     <div class="col-sm-4">
-
-  //       <img src="img/candy.jpg" class="img-responsive margin" style="width:100%" alt="Image" />
-  //       <div class="sub-judul">
-  //         <h4><b>Dunia Candy</b></h4>
-  //       </div>
-  //       <p>
-  //         Wisata Dunia Candy merupakan sebuah tempat wisata baru yang dikhususkan untuk keluarga.
-  //         lokasinya tidak terlalu jauh dari pusat Kota Kediri atau tepatnya berada di Sukorejo, Wates, Kediri....<a href="">Selengkapnya</a>
-  //       </p>
-  //     </div>
-  //   </div>
-  // </div> -->
+            <th>Nama Produk</th>
+            <th>Harga Produk</th>
+            <th>Foto</th>
+        </tr>
+        <?php
+            foreach ($isiproduk as $data){
+                
+                echo "<tr>";
+                echo "<td>$data[nama_produk]</td>";
+                echo "<td>$data[harga_produk]</td>";
+                echo "<td><img src='img/" .$data['foto_produk']."'height='100'></td>";
+                echo "</tr>";
+            }
+        ?>
+    </table>
 </body>
 
 <!-- Footer -->
