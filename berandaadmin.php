@@ -32,29 +32,11 @@
           document.getElementById("txtHint").innerHTML = this.responseText;
         }
       };
-      xmlhttp.open("GET", "model.php?q=" + str, true);
+      xmlhttp.open("GET", "getuser.php?q=" + str, true);
       xmlhttp.send();
     }
   </script>
 
-  <!-- Tabel penampil AJAX -->
-  <style>
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    table,
-    td,
-    th {
-      border: 1px solid black;
-      padding: 5px;
-    }
-
-    th {
-      text-align: left;
-    }
-  </style>
 </head>
 
 <body>
@@ -94,7 +76,7 @@
 
   <!-- AJAX -->
   <form>
-    <select namae="users" onchange="showUser(this.value)">
+    <select name="user" onchange="showUser(this.value)">
       <option value="">Select a person:</option>
       <option value="1">Admin</option>
       <option value="2">User</option>

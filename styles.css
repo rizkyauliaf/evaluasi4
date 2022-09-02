@@ -1,7 +1,7 @@
     body {
         font: 20px Montserrat, sans-serif;
         line-height: 1.8;
-        color: #f5f6f7;
+        color: #020202;
     }
 
     p {
@@ -20,7 +20,7 @@
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        color: #ffffff;
+        color: #3326f3;
     }
 
     .bg-2 {
