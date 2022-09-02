@@ -75,11 +75,10 @@
 
   <?php
   ?>
-  <div class="container">
+  <!-- <div class="container">
     <h1>Data Produk</h1>
     <table border="1">
         <tr>
-
             <th>Nama Produk</th>
             <th>Harga Produk</th>
             <th>Foto</th>
@@ -90,11 +89,12 @@
                 echo "<tr>";
                 echo "<td>$data[nama_produk]</td>";
                 echo "<td>$data[harga_produk]</td>";
-                echo "<td><img src='img/" .$data['foto_produk']."'height='100'></td>";
+                // echo "<td><img src='img/" .$data['foto_produk']."'height='100'></td>";
                 echo "</tr>";
             }
         ?>
     </table>
+  </div> -->
 </body>
 
 <!-- Footer -->
